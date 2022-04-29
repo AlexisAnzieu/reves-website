@@ -4,7 +4,7 @@ import type { NextPage } from "next";
 const Home: NextPage = () => {
     return (
         <Container pt={"70px"}>
-            <Box className="gradient-text">
+            <Box className="gradient-text" fontWeight={"bold"}>
                 <Heading size={"lg"} pb={5}>
                     Quel est l'objectif de Reve.s?
                 </Heading>
