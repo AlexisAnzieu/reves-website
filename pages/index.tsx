@@ -14,7 +14,7 @@ const Home: NextPage = () => {
                 </Heading>
                 💭 À travers l'organisation d'événements musicaux, nous
                 souhaitons accompagner les participants à une rencontre et une
-                collaboration avec le monde qui les entoure.
+                symbiose avec leur environnement.
                 <br /> <br />
                 Distribution de repas le jour et fou du dancefloor la nuit? Nous
                 souhaitons lier l'univers festif avec l'univers associatif
