@@ -46,10 +46,9 @@ const Home: NextPage = () => {
                 <Heading size={"lg"} pb={5} pt={10}>
                     Comment nous contacter?
                 </Heading>
-                💭 Tu es une agence, une association ou tout simplement curieux
-                de nature? Contacte-nous par email:{" "}
+                💭 Tu es une agence, une association ou tout simplement?
+                Contacte-nous par email:{" "}
                 <a href="mailto:allo@reve-s.net">allo@reve-s.net</a>
-                .
                 <br />
                 <br />
                 <Heading textAlign={"right"} size={"md"} pb={5} pt={10}>
