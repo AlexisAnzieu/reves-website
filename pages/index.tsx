@@ -16,7 +16,7 @@ const Home: NextPage = () => {
                 souhaitons accompagner les participants à une rencontre et une
                 symbiose avec leur environnement.
                 <br /> <br />
-                Distribution de repas le jour et fou du clubbing la nuit? Nous
+                Distribution de repas le jour et direction le club la nuit? Nous
                 souhaitons lier l'univers festif avec l'univers associatif
                 écologique et social.
                 <Heading size={"lg"} pb={5} pt={10}>
