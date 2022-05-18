@@ -32,7 +32,7 @@ const Home: NextPage = () => {
                 sommes en lien. Sur place, un membre de REVE.S est en charge de
                 son bon déroulement et de la présence de chaque participant. À
                 la suite de l'activité, un crédit de temps associatif, appelé
-                "sourire", sera ajouté sur leur compte. Ce sourire s'échange
+                "sourire", est ajouté sur leur compte. Ce sourire s'échange
                 contre une place pour nos événements, et à terme ceux de nos
                 partenaires.
                 <Heading size={"lg"} pb={5} pt={10}>
