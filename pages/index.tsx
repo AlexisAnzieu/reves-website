@@ -8,27 +8,26 @@ const Home: NextPage = () => {
                 <Heading size={"lg"} pb={5}>
                     Quel est l'objectif de Reve.s?
                 </Heading>
-                💭 S'épanouir en tant qu'Humain, grâce à un élan local.
+                💭 S'épanouir en se gratifiant
                 <Heading size={"lg"} pb={5} pt={10}>
                     Par quel biais?
                 </Heading>
                 💭 À travers l'organisation d'événements musicaux, nous
-                souhaitons accompagner les participants à une rencontre et une
-                symbiose avec leur environnement.
+                souhaitons accompagner les participant.e.s à prendre conscience
+                de leur environnement.
                 <br /> <br />
                 Distribution de repas le jour et direction le club la nuit? Nous
-                souhaitons lier l'univers festif avec l'univers associatif
-                écologique et social.
+                souhaitons lier l'univers festif avec l'univers associatif.
                 <Heading size={"lg"} pb={5} pt={10}>
                     Comment cela se concrétise-t-il?
                 </Heading>
-                💭 Conscient que l'argent est un outil, nous l'utilisons ici
-                comme tel. Au moment de payer son billet, le participant a le
-                choix entre payer en dollars ou payer en temps associatif.
+                💭 Conscient.es que l'argent est un outil, nous l'utilisons
+                ainsi. Au moment de payer son billet, les participant.es ont le
+                choix: payer en dollars ou payer en temps associatif.
                 <Heading size={"lg"} pb={5} pt={10}>
                     Payer en temps associatif?
                 </Heading>
-                💭 Nous mettons à disposition des participants une liste de
+                💭 Nous mettons à disposition des participant.es une liste de
                 sessions organisées par des associations avec lesquelles nous
                 sommes en lien. Sur place, un membre de REVE.S est en charge de
                 son bon déroulement et de la présence de chaque participant. À
