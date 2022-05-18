@@ -8,7 +8,7 @@ const Home: NextPage = () => {
                 <Heading size={"lg"} pb={5}>
                     Quel est l'objectif de Reve.s?
                 </Heading>
-                💭 S'épanouir en se gratifiant
+                💭 S'épanouir
                 <Heading size={"lg"} pb={5} pt={10}>
                     Par quel biais?
                 </Heading>
