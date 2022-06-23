@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 
 const Home: NextPage = () => {
     return (
-        <Container pt={"70px"}>
+        <Container p={"40px"}>
             <Box className="gradient-text" fontWeight={"bold"}>
                 <Heading size={"lg"} pb={5}>
                     Quel est l'objectif de Reve.s?
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
                 <a href="mailto:allo@reve-s.net">allo@reve-s.net</a>
                 <br />
                 <br />
-                <Heading textAlign={"right"} size={"md"} pb={5} pt={10}>
+                <Heading textAlign={"center"} size={"md"} pt={10}>
                     Merci d'avoir pris le temps de nous lire et à très vite!
                     <br />
                 </Heading>

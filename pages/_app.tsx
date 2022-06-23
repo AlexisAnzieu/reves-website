@@ -1,8 +1,9 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
-import Navbar from "../components/Navbarx";
+import Navbar from "../components/Navbar";
 import Head from "next/head";
+import BottomBar from "../components/BottomBar";
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
@@ -22,8 +23,9 @@ function MyApp({ Component, pageProps }: AppProps) {
                     key="ogpic"
                 />
             </Head>
-            <Navbar></Navbar>
+            <Navbar />
             <Component {...pageProps} />
+            <BottomBar />
         </ChakraProvider>
     );
 }
