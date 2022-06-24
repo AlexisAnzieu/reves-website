@@ -14,14 +14,14 @@ export default function Navbar() {
         >
             <Center>
                 <Box pl={2}>
-                    <a href="/" aria-label="back to acti homepage">
+                    <Link href="/" aria-label="back to acti homepage">
                         <NextImage
                             width="70px"
                             height="70px"
                             alt="logo acti"
                             src="/favicon.png"
                         />
-                    </a>
+                    </Link>
                 </Box>
             </Center>
             <Spacer />
