@@ -5,7 +5,7 @@ import { Chart } from "react-chartjs-2";
 export default function Finances() {
     return (
         <Container p={"30px"}>
-              <Heading>En cours de dévelopement...</Heading>{" "}
+            <Heading>En cours de dévelopement...</Heading>{" "}
             {/* <Center>
                 <Chart
                     type="line"
@@ -20,7 +20,7 @@ export default function Finances() {
                         ],
                     }}
                 /> */}
-            </Center>
+            {/* </Center> */}
         </Container>
     );
 }
