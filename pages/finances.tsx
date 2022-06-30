@@ -92,7 +92,12 @@ export default function Finances() {
                                     <Td>{donation.date}</Td>
                                     <Td>
                                         {donation.documentUrl && (
-                                            <a href={donation.documentUrl}>
+                                            <a
+                                                href={
+                                                    "receipt_donations/" +
+                                                    donation.documentUrl
+                                                }
+                                            >
                                                 <Button
                                                     colorScheme="orange"
                                                     size="xs"
