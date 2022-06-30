@@ -22,20 +22,35 @@ import { Chart } from "react-chartjs-2";
 export default function Finances() {
     const donations = [
         {
-            name: "Santropol roulant",
+            name: "Santropol Roulant",
             url: "https://santropolroulant.org/fr/",
             date: "30 juin 2022",
-            amount: 315,
+            amount: 300,
             documentUrl: "/SI2-0012187-0002524-ANZIEU-ALEXIS.pdf",
         },
+        {
+            name: "Zeffy",
+            url: "https://www.zeffy.com/",
+            date: "30 juin 2022",
+            amount: 15,
+            documentUrl: null,
+        },
     ];
+
     return (
         <Container p={"30px"}>
             <Box pb={30} textAlign={"center"}>
                 <Stat>
                     <StatLabel>À ce jour, nous avons distribué</StatLabel>
-                    <StatNumber>315 $</StatNumber>
-                    <StatHelpText>à 1 association</StatHelpText>
+                    <StatNumber>
+                        {donations
+                            .map((d) => d.amount)
+                            .reduce((acc, amount) => acc + amount)}
+                        $
+                    </StatNumber>
+                    <StatHelpText>
+                        à {donations.length} association
+                    </StatHelpText>
                 </Stat>
             </Box>
             <Box pb={30}>
@@ -63,12 +78,12 @@ export default function Finances() {
                                 <Th>Nom</Th>
                                 <Th>Date</Th>
                                 <Th>Reçu</Th>
-                                <Th isNumeric>$</Th>
+                                <Th isNumeric>Montant</Th>
                             </Tr>
                         </Thead>
                         <Tbody>
                             {donations.map((donation) => (
-                                <Tr key={donation.documentUrl}>
+                                <Tr key={donation.name}>
                                     <Td>
                                         <a href={donation.url}>
                                             {donation.name}
@@ -76,16 +91,18 @@ export default function Finances() {
                                     </Td>
                                     <Td>{donation.date}</Td>
                                     <Td>
-                                        <a href={donation.documentUrl}>
-                                            <Button
-                                                colorScheme="orange"
-                                                size="xs"
-                                            >
-                                                télécharger
-                                            </Button>
-                                        </a>
+                                        {donation.documentUrl && (
+                                            <a href={donation.documentUrl}>
+                                                <Button
+                                                    colorScheme="orange"
+                                                    size="xs"
+                                                >
+                                                    télécharger
+                                                </Button>
+                                            </a>
+                                        )}
                                     </Td>
-                                    <Td isNumeric>{donation.amount}</Td>
+                                    <Td isNumeric>{donation.amount}$</Td>
                                 </Tr>
                             ))}
                         </Tbody>
