@@ -39,7 +39,7 @@ export default function Navbar() {
                         }}
                         href="/donations"
                     >
-                        Donations
+                        Nos dons
                     </Link>
                 </Box>
                 <Box p="4">
