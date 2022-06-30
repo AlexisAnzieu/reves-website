@@ -68,7 +68,7 @@ export default function Finances() {
                         </Thead>
                         <Tbody>
                             {donations.map((donation) => (
-                                <Tr>
+                                <Tr key={donation.documentUrl}>
                                     <Td>
                                         <a href={donation.url}>
                                             {donation.name}
