@@ -37,9 +37,9 @@ export default function Navbar() {
                             textDecoration: "none",
                             color: "orange.400",
                         }}
-                        href="/finances"
+                        href="/donations"
                     >
-                        Finances
+                        Donations
                     </Link>
                 </Box>
                 <Box p="4">

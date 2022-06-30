@@ -1,8 +1,6 @@
 import {
     Box,
-    Center,
     Container,
-    Heading,
     Stat,
     Button,
     StatHelpText,
@@ -19,7 +17,7 @@ import {
 import "chart.js/auto";
 import { Chart } from "react-chartjs-2";
 
-export default function Finances() {
+export default function Donations() {
     const donations = [
         {
             name: "Santropol Roulant",
