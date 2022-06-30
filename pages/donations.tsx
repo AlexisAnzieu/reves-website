@@ -40,10 +40,13 @@ export default function Donations() {
             <Box pb={30} textAlign={"center"}>
                 <Stat>
                     <StatLabel>À ce jour, nous avons distribué</StatLabel>
+                    <StatNumber>4</StatNumber>
+                    <StatHelpText>places associatives</StatHelpText>
+                    <StatLabel>&</StatLabel>
                     <StatNumber>
                         {donations
                             .map((d) => d.amount)
-                            .reduce((acc, amount) => acc + amount)}
+                            .reduce((acc, amount) => acc + amount)}{" "}
                         $
                     </StatNumber>
                     <StatHelpText>
