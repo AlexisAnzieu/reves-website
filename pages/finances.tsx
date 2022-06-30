@@ -60,9 +60,9 @@ export default function Finances() {
                         labels: ["Avril", "Mai", "Juin", "Juillet"],
                         datasets: [
                             {
-                                backgroundColor: "#0CC5EA",
+                                backgroundColor: "#dd6b20",
                                 fill: true,
-                                borderColor: "#0CC5EA",
+                                borderColor: "#dd6b20",
                                 label: "donations cumulées en $",
                                 data: ["0", "0", "315", "315"],
                             },
