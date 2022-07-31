@@ -50,7 +50,7 @@ export default function Donations() {
                         $
                     </StatNumber>
                     <StatHelpText>
-                        à {donations.length} association
+                        à {donations.length} associations
                     </StatHelpText>
                 </Stat>
             </Box>
