@@ -40,7 +40,7 @@ export default function Donations() {
             <Box pb={30} textAlign={"center"}>
                 <Stat>
                     <StatLabel>À ce jour, nous avons distribué</StatLabel>
-                    <StatNumber>4</StatNumber>
+                    <StatNumber>9</StatNumber>
                     <StatHelpText>places associatives</StatHelpText>
                     <StatLabel>&</StatLabel>
                     <StatNumber>
@@ -58,14 +58,30 @@ export default function Donations() {
                 <Chart
                     type="line"
                     data={{
-                        labels: ["Avril", "Mai", "Juin", "Juillet"],
+                        labels: [
+                            "Avril",
+                            "Mai",
+                            "Juin",
+                            "Juillet",
+                            "Aout",
+                            "Septembre",
+                            "Octobre",
+                        ],
                         datasets: [
                             {
                                 backgroundColor: "#dd6b20",
                                 fill: true,
                                 borderColor: "#dd6b20",
                                 label: "donations cumulées en $",
-                                data: ["0", "0", "315", "315"],
+                                data: [
+                                    "0",
+                                    "0",
+                                    "315",
+                                    "315",
+                                    "315",
+                                    "315",
+                                    "315",
+                                ],
                             },
                         ],
                     }}
