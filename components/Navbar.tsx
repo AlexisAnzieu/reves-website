@@ -43,7 +43,7 @@ export default function Navbar() {
                     </Link>
                 </Box>
                 <Box p="4">
-                    <a href="https://app.reve-s.net">
+                    <a href="https://freezerland.notion.site/Donner-du-temps-9a4997e183714bffac6f9c613238e34f">
                         <Button
                             _hover={{
                                 backgroundColor: "orange.400",
@@ -51,7 +51,7 @@ export default function Navbar() {
                             colorScheme={"cyan"}
                             color={"white"}
                         >
-                            Accéder à l'app
+                            Donner du temps
                         </Button>
                     </a>
                 </Box>
