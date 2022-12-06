@@ -1,15 +1,3 @@
-html,
-body {
-    padding: 0;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-* {
-    box-sizing: border-box;
-}
-
 .gradient-text {
     background-color: #f3ec78;
     background-image: linear-gradient(180deg, #00ccff, #ffae00);

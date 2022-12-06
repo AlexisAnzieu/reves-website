@@ -14,11 +14,11 @@ export default function Navbar() {
         >
             <Center>
                 <Box pl={2}>
-                    <Link href="/" aria-label="back to acti homepage">
+                    <Link href="/">
                         <NextImage
                             width="70px"
                             height="70px"
-                            alt="logo acti"
+                            alt="logo reve"
                             src="/favicon.png"
                         />
                     </Link>
@@ -32,28 +32,14 @@ export default function Navbar() {
                     p="4"
                     color="#16CBFB"
                 >
-                    <Link
-                        _hover={{
-                            textDecoration: "none",
-                            color: "orange.400",
-                        }}
-                        href="/donations"
-                    >
-                        Nos dons
-                    </Link>
+                    <Link href="/donations">Nos dons</Link>
                 </Box>
                 <Box p="4">
-                    <a href="https://app.reve-s.net">
-                        <Button
-                            _hover={{
-                                backgroundColor: "orange.400",
-                            }}
-                            colorScheme={"cyan"}
-                            color={"white"}
-                        >
-                            Accéder à l'app
+                    <Link href="/associations">
+                        <Button colorScheme={"cyan"} color={"white"}>
+                            Fais ton shift
                         </Button>
-                    </a>
+                    </Link>
                 </Box>
             </Center>
         </Flex>
