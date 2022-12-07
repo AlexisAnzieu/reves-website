@@ -32,12 +32,29 @@ export default function Navbar() {
                     p="4"
                     color="#16CBFB"
                 >
-                    <Link href="/donations">Nos dons</Link>
+                    <Link
+                        _hover={{
+                            textDecoration: "none",
+                            color: "orange.400",
+                        }}
+                        href="/donations"
+                    >
+                        Nos dons
+                    </Link>
                 </Box>
                 <Box p="4">
-                    <Link href="/associations">
-                        <Button colorScheme={"cyan"} color={"white"}>
-                            Fais ton shift
+                    <Link
+                        style={{ textDecoration: "none" }}
+                        href="/associations"
+                    >
+                        <Button
+                            _hover={{
+                                backgroundColor: "orange.400",
+                            }}
+                            colorScheme={"cyan"}
+                            color={"white"}
+                        >
+                            Choisis ta session
                         </Button>
                     </Link>
                 </Box>

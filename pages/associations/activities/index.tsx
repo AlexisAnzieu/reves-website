@@ -17,7 +17,7 @@ export default function Sessions() {
     return (
         <Container p={"30px"}>
             <Heading size={"lg"} pb={5}>
-                Popote roulante
+                Activités de Santropol
             </Heading>
             <SimpleGrid minChildWidth="200px" spacing={10}>
                 <Card maxW="sm">

@@ -24,8 +24,11 @@ export default function Sessions() {
                 Choisis l'association pour laquelle tu souhaiterais donner de
                 ton temps
             </Box>
-            <SimpleGrid minChildWidth="200px" spacing={2}>
-                <Card maxW="sm">
+            <SimpleGrid
+                spacing={4}
+                templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+            >
+                <Card variant="elevated" shadow={"lg"} maxW="sm">
                     <CardBody>
                         <Stack mt="6" spacing="3">
                             <Heading size="md">Santropol Roulant</Heading>
@@ -51,29 +54,47 @@ export default function Sessions() {
                     <Divider />
                     <CardFooter>
                         <ButtonGroup spacing="2">
-                            <Link href="/associations/activities">
-                                <Button color={"white"} colorScheme="cyan">
+                            <Link
+                                style={{ textDecoration: "none" }}
+                                href="/associations/activities"
+                            >
+                                <Button
+                                    _hover={{
+                                        backgroundColor: "orange.400",
+                                    }}
+                                    color={"white"}
+                                    colorScheme="cyan"
+                                >
                                     Voir les activités
                                 </Button>
                             </Link>
                         </ButtonGroup>
                     </CardFooter>
                 </Card>
-                <Card maxW="sm">
+                <Card maxW="sm" variant="elevated">
                     <CardBody>
                         <Stack mt="6" spacing="3">
-                            <Heading size="md">La votre?</Heading>
+                            <Heading size="md">La tienne?</Heading>
                             <Text noOfLines={5}>
-                                Vous avez besoin de bénévoles pour vos
-                                activités? N'hésitez pas à nous contacter!
+                                Tu as besoin de bénévoles pour des activités
+                                spécifiques? N'hésite pas à nous contacter!
                             </Text>
                         </Stack>
                     </CardBody>
                     <Divider />
                     <CardFooter>
                         <ButtonGroup spacing="2">
-                            <Link href="/activities">
-                                <Button color={"white"} colorScheme="cyan">
+                            <Link
+                                style={{ textDecoration: "none" }}
+                                href="mailto:allo@reve-s.net"
+                            >
+                                <Button
+                                    _hover={{
+                                        backgroundColor: "orange.400",
+                                    }}
+                                    color={"white"}
+                                    colorScheme="cyan"
+                                >
                                     Nous envoyer un mail
                                 </Button>
                             </Link>
