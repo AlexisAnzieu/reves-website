@@ -14,7 +14,7 @@ export async function getStaticProps() {
     };
 }
 
-export default function Popote({ activity }) {
+export default function Popote({ activity }: any) {
     return (
         <Container p={"30px"}>
             <Heading size={"lg"} pb={5}>
