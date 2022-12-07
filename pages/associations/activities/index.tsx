@@ -19,8 +19,11 @@ export default function Sessions() {
             <Heading size={"lg"} pb={5}>
                 Activités de Santropol
             </Heading>
-            <SimpleGrid minChildWidth="200px" spacing={10}>
-                <Card maxW="sm">
+            <SimpleGrid
+                spacing={4}
+                templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+            >
+                <Card shadow={"xl"} maxW="sm">
                     <CardBody>
                         <Stack mt="6" spacing="3">
                             <Heading size="md">Popote roulante</Heading>
@@ -38,13 +41,34 @@ export default function Sessions() {
                     <Divider />
                     <CardFooter>
                         <ButtonGroup spacing="2">
-                            <Link href="/associations/activities/popote-roulante">
-                                <Button color={"white"} colorScheme="cyan">
+                            <Link
+                                style={{ textDecoration: "none" }}
+                                href="/associations/activities/popote-roulante"
+                            >
+                                <Button
+                                    _hover={{
+                                        backgroundColor: "orange.400",
+                                    }}
+                                    color={"white"}
+                                    colorScheme="cyan"
+                                >
                                     Voir le processus
                                 </Button>
                             </Link>
                         </ButtonGroup>
                     </CardFooter>
+                </Card>
+                <Card shadow={"sm"} maxW="sm">
+                    <CardBody>
+                        <Stack mt="6" spacing="3">
+                            <Heading size="md">En cuisine</Heading>
+                            <Text noOfLines={5}>
+                                Cette session est en cours de test et sera
+                                disponible bientôt!
+                            </Text>
+                        </Stack>
+                    </CardBody>
+                    <Divider />
                 </Card>
             </SimpleGrid>
         </Container>

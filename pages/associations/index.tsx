@@ -28,7 +28,7 @@ export default function Sessions() {
                 spacing={4}
                 templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
             >
-                <Card variant="elevated" shadow={"lg"} maxW="sm">
+                <Card shadow={"xl"} maxW="sm">
                     <CardBody>
                         <Stack mt="6" spacing="3">
                             <Heading size="md">Santropol Roulant</Heading>
@@ -71,7 +71,7 @@ export default function Sessions() {
                         </ButtonGroup>
                     </CardFooter>
                 </Card>
-                <Card maxW="sm" variant="elevated">
+                <Card maxW="sm" shadow={"sm"}>
                     <CardBody>
                         <Stack mt="6" spacing="3">
                             <Heading size="md">La tienne?</Heading>
