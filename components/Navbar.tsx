@@ -14,11 +14,11 @@ export default function Navbar() {
         >
             <Center>
                 <Box pl={2}>
-                    <Link href="/" aria-label="back to acti homepage">
+                    <Link href="/">
                         <NextImage
                             width="70px"
                             height="70px"
-                            alt="logo acti"
+                            alt="logo reve"
                             src="/favicon.png"
                         />
                     </Link>
@@ -43,7 +43,10 @@ export default function Navbar() {
                     </Link>
                 </Box>
                 <Box p="4">
-                    <a href="https://freezerland.notion.site/Donner-du-temps-9a4997e183714bffac6f9c613238e34f">
+                    <Link
+                        style={{ textDecoration: "none" }}
+                        href="/associations"
+                    >
                         <Button
                             _hover={{
                                 backgroundColor: "orange.400",
@@ -51,9 +54,9 @@ export default function Navbar() {
                             colorScheme={"cyan"}
                             color={"white"}
                         >
-                            Donner du temps
+                            Choisis ta session
                         </Button>
-                    </a>
+                    </Link>
                 </Box>
             </Center>
         </Flex>
