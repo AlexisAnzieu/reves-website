@@ -58,7 +58,7 @@ export default function Association() {
                         <ButtonGroup spacing="2">
                             <Link
                                 style={{ textDecoration: "none" }}
-                                href="/associations/santropol-roulant/sessions/popote-roulante"
+                                href="/associations/santropol-roulant/popote-roulante"
                             >
                                 <Button
                                     _hover={{

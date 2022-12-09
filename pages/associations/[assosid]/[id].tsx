@@ -5,7 +5,7 @@ import {
     BreadcrumbLink,
 } from "@chakra-ui/react";
 import ReactMarkdown from "react-markdown";
-import { directus } from "../../../../helpers/directus";
+import { directus } from "../../../helpers/directus";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
 export default function Session({ session }: any) {
