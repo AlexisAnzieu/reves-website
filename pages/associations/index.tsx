@@ -56,7 +56,7 @@ export default function Sessions() {
                         <ButtonGroup spacing="2">
                             <Link
                                 style={{ textDecoration: "none" }}
-                                href="/associations/activities"
+                                href="/associations/santropol-roulant"
                             >
                                 <Button
                                     _hover={{

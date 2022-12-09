@@ -11,14 +11,29 @@ import {
     Link,
     Text,
     SimpleGrid,
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
 } from "@chakra-ui/react";
+import { ChevronRightIcon } from "@chakra-ui/icons";
 
-export default function Sessions() {
+export default function Association() {
     return (
         <Container p={"30px"}>
-            <Heading size={"lg"} pb={5}>
-                Activités de Santropol
-            </Heading>
+            <Breadcrumb
+                spacing="8px"
+                separator={<ChevronRightIcon color="gray.500" />}
+            >
+                <BreadcrumbItem>
+                    <BreadcrumbLink href="/associations">
+                        Associations
+                    </BreadcrumbLink>
+                </BreadcrumbItem>
+
+                <BreadcrumbItem isCurrentPage>
+                    <BreadcrumbLink href="#">Santropol Roulant</BreadcrumbLink>
+                </BreadcrumbItem>
+            </Breadcrumb>
             <SimpleGrid
                 spacing={4}
                 templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
@@ -43,7 +58,7 @@ export default function Sessions() {
                         <ButtonGroup spacing="2">
                             <Link
                                 style={{ textDecoration: "none" }}
-                                href="/associations/activities/popote-roulante"
+                                href="/associations/santropol-roulant/sessions/popote-roulante"
                             >
                                 <Button
                                     _hover={{
