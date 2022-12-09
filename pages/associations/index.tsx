@@ -65,7 +65,7 @@ export default function Sessions() {
                                     color={"white"}
                                     colorScheme="cyan"
                                 >
-                                    Voir les activités
+                                    Voir les sessions
                                 </Button>
                             </Link>
                         </ButtonGroup>

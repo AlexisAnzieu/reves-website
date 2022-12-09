@@ -7,9 +7,8 @@ import {
 import ReactMarkdown from "react-markdown";
 import { directus } from "../../../../helpers/directus";
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import { GetStaticPropsContext } from "next/types";
 
-export default function Session({ activity }: any) {
+export default function Session({ session }: any) {
     return (
         <Container p={"30px"}>
             <Breadcrumb
@@ -18,16 +17,22 @@ export default function Session({ activity }: any) {
             >
                 <BreadcrumbItem>
                     <BreadcrumbLink href="/associations">
-                        Activités
+                        Associations
+                    </BreadcrumbLink>
+                </BreadcrumbItem>
+
+                <BreadcrumbItem>
+                    <BreadcrumbLink href="/associations/santropol-roulant">
+                        Santropol Roulant
                     </BreadcrumbLink>
                 </BreadcrumbItem>
 
                 <BreadcrumbItem isCurrentPage>
-                    <BreadcrumbLink href="#">Santropol</BreadcrumbLink>
+                    <BreadcrumbLink href="#">Popote Roulante</BreadcrumbLink>
                 </BreadcrumbItem>
             </Breadcrumb>
             <div id="noStyle">
-                <ReactMarkdown>{activity.description}</ReactMarkdown>
+                <ReactMarkdown>{session.description}</ReactMarkdown>
             </div>
         </Container>
     );
@@ -35,20 +40,21 @@ export default function Session({ activity }: any) {
 
 export async function getStaticPaths() {
     return {
-        paths: [{ params: { assosid: "santropol", id: "popote-roulante" } }],
+        paths: [
+            { params: { assosid: "santropol-roulant", id: "popote-roulante" } },
+        ],
         fallback: false,
     };
 }
 
 export async function getStaticProps(params: any) {
-    console.log(params);
-    const activity = await directus
+    const session = await directus
         .items("activities")
         .readOne("3f8133b3-1864-4120-9572-6e84e067d132", {
             fields: ["title", "description"],
         });
 
     return {
-        props: { activity },
+        props: { session },
     };
 }
