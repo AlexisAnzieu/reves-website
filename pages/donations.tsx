@@ -22,6 +22,20 @@ export default function Donations() {
         {
             name: "Santropol Roulant",
             url: "https://santropolroulant.org/fr/",
+            date: "20 décembre 2022",
+            amount: 300,
+            documentUrl: "/SI2-0012187-0002810-ANZIEU-ALEXIS.pdf",
+        },
+        {
+            name: "Zeffy",
+            url: "https://www.zeffy.com/",
+            date: "20 décembre 2022",
+            amount: 23.95,
+            documentUrl: null,
+        },
+        {
+            name: "Santropol Roulant",
+            url: "https://santropolroulant.org/fr/",
             date: "30 juin 2022",
             amount: 300,
             documentUrl: "/SI2-0012187-0002524-ANZIEU-ALEXIS.pdf",
@@ -66,6 +80,8 @@ export default function Donations() {
                             "Aout",
                             "Septembre",
                             "Octobre",
+                            "Novembre",
+                            "Décembre",
                         ],
                         datasets: [
                             {
@@ -81,6 +97,8 @@ export default function Donations() {
                                     "315",
                                     "315",
                                     "315",
+                                    "315",
+                                    "638.95",
                                 ],
                             },
                         ],
