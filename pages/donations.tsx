@@ -64,7 +64,9 @@ export default function Donations() {
                         $
                     </StatNumber>
                     <StatHelpText>
-                        à {donations.length} associations
+                        à{" "}
+                        {[...new Set(donations.flatMap((d) => d.name))].length}{" "}
+                        associations
                     </StatHelpText>
                 </Stat>
             </Box>
