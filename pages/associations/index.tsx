@@ -15,16 +15,6 @@ import {
 } from "@chakra-ui/react";
 import { directus } from "../../helpers/directus";
 
-export async function getStaticProps() {
-    const { data: associations } = await directus
-        .items("associations")
-        .readByQuery();
-
-    return {
-        props: { associations },
-    };
-}
-
 export default function Associations({ associations }: any) {
     return (
         <Container p={"30px"}>
@@ -113,4 +103,14 @@ export default function Associations({ associations }: any) {
             </SimpleGrid>
         </Container>
     );
+}
+
+export async function getStaticProps() {
+    const { data: associations } = await directus
+        .items("associations")
+        .readByQuery();
+
+    return {
+        props: { associations },
+    };
 }

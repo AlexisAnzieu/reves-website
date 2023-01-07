@@ -8,7 +8,7 @@ import ReactMarkdown from "react-markdown";
 import { directus } from "../../../helpers/directus";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
-export default function Session({ session }: any) {
+export default function Session({ description, title, association }: any) {
     return (
         <Container p={"30px"}>
             <Breadcrumb
@@ -23,38 +23,55 @@ export default function Session({ session }: any) {
 
                 <BreadcrumbItem>
                     <BreadcrumbLink href="/associations/santropol-roulant">
-                        Santropol Roulant
+                        {association.title}
                     </BreadcrumbLink>
                 </BreadcrumbItem>
 
                 <BreadcrumbItem isCurrentPage>
-                    <BreadcrumbLink href="#">Popote Roulante</BreadcrumbLink>
+                    <BreadcrumbLink href="#">{title}</BreadcrumbLink>
                 </BreadcrumbItem>
             </Breadcrumb>
             <div id="noStyle">
-                <ReactMarkdown>{session.description}</ReactMarkdown>
+                <ReactMarkdown>{description}</ReactMarkdown>
             </div>
         </Container>
     );
 }
 
 export async function getStaticPaths() {
+    const { data: associations }: any = await directus
+        .items("associations")
+        .readByQuery({
+            fields: ["slug", "activities.slug"],
+        });
+
     return {
-        paths: [
-            { params: { assosid: "santropol-roulant", id: "popote-roulante" } },
-        ],
+        paths: associations.flatMap((association: any) =>
+            association.activities.map((activity: any) => ({
+                params: {
+                    slug: association.slug,
+                    activitySlug: activity.slug,
+                },
+            }))
+        ),
         fallback: false,
     };
 }
 
 export async function getStaticProps(params: any) {
-    const session = await directus
+    const activity = await directus
         .items("activities")
-        .readOne("3f8133b3-1864-4120-9572-6e84e067d132", {
-            fields: ["title", "description"],
-        });
+        .readByQuery({
+            filter: {
+                slug: {
+                    _eq: params.params.activitySlug,
+                },
+            },
+            fields: ["title", "description", "association.title"],
+        })
+        .then((res: any) => res.data[0]);
 
     return {
-        props: { session },
+        props: activity,
     };
 }
