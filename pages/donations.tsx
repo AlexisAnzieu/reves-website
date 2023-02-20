@@ -22,6 +22,13 @@ export default function Donations() {
         {
             name: "Santropol Roulant",
             url: "https://santropolroulant.org/fr/",
+            date: "19 février 2023",
+            amount: 200,
+            documentUrl: "/SI2-0012187-0002989-ANZIEU-ALEXIS.pdf",
+        },
+        {
+            name: "Santropol Roulant",
+            url: "https://santropolroulant.org/fr/",
             date: "20 décembre 2022",
             amount: 300,
             documentUrl: "/SI2-0012187-0002810-ANZIEU-ALEXIS.pdf",
@@ -54,7 +61,7 @@ export default function Donations() {
             <Box pb={30} textAlign={"center"}>
                 <Stat>
                     <StatLabel>À ce jour, nous avons distribué</StatLabel>
-                    <StatNumber>9</StatNumber>
+                    <StatNumber>14</StatNumber>
                     <StatHelpText>places associatives</StatHelpText>
                     <StatLabel>&</StatLabel>
                     <StatNumber>
@@ -75,7 +82,7 @@ export default function Donations() {
                     type="line"
                     data={{
                         labels: [
-                            "Avril",
+                            "Avril 2022",
                             "Mai",
                             "Juin",
                             "Juillet",
@@ -84,6 +91,8 @@ export default function Donations() {
                             "Octobre",
                             "Novembre",
                             "Décembre",
+                            "Janvier 2023",
+                            "Février",
                         ],
                         datasets: [
                             {
@@ -101,6 +110,8 @@ export default function Donations() {
                                     "315",
                                     "315",
                                     "638.95",
+                                    "638.95",
+                                    "838.95",
                                 ],
                             },
                         ],
