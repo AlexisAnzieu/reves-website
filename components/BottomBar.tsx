@@ -1,5 +1,5 @@
 import { Box, Center, chakra, Flex, Icon } from "@chakra-ui/react";
-import { BsInstagram } from "react-icons/bs";
+import { BsFacebook, BsInstagram } from "react-icons/bs";
 import { MdOutlineEmail } from "react-icons/md";
 
 export default function Navbar() {
@@ -7,6 +7,16 @@ export default function Navbar() {
         <Center>
             <Flex h="70px" mb={30}>
                 <Box fontSize="3rem" fontWeight={"bold"} color="#16CBFB">
+                    <chakra.a
+                        p="4"
+                        _hover={{
+                            textDecoration: "none",
+                            color: "orange.400",
+                        }}
+                        href="https://www.facebook.com/alloreves"
+                    >
+                        <Icon as={BsFacebook} />
+                    </chakra.a>
                     <chakra.a
                         p="4"
                         _hover={{
