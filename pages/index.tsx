@@ -38,7 +38,7 @@ const Home: NextPage = () => {
                 <Heading size={"lg"} pb={5} pt={10}>
                     Qui finance ce projet?
                 </Heading>
-                💭 Pour le moment, REVE.S est une OBNL 100% financé par des
+                💭 Pour le moment, REVE.S est une OBNL 100% financée par des
                 fonds personnels. Nous espérons à terme trouver un équilibre
                 entre les différents acteurs afin de permettre une balance
                 financière nulle, autofinancée par les agences évènementielles
