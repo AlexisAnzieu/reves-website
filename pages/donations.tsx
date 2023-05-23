@@ -20,6 +20,20 @@ import { Chart } from "react-chartjs-2";
 export default function Donations() {
     const donations = [
         {
+            name: "Centre des femmes de Montréal",
+            url: "https://centredesfemmesdemtl.org/",
+            date: "19 mai 2023",
+            amount: 250,
+            documentUrl: "/centrefemme.pdf",
+        },
+        {
+            name: "Partage & Solidarité",
+            url: "https://www.facebook.com/equipeatlantide",
+            date: "19 mai 2023",
+            amount: 250,
+            documentUrl: null,
+        },
+        {
             name: "Santropol Roulant",
             url: "https://santropolroulant.org/fr/",
             date: "19 février 2023",
@@ -93,6 +107,9 @@ export default function Donations() {
                             "Décembre",
                             "Janvier 2023",
                             "Février",
+                            "Mars",
+                            "Avril",
+                            "Mai",
                         ],
                         datasets: [
                             {
@@ -112,6 +129,9 @@ export default function Donations() {
                                     "638.95",
                                     "638.95",
                                     "838.95",
+                                    "838.95",
+                                    "838.95",
+                                    "1338.95",
                                 ],
                             },
                         ],
@@ -124,9 +144,9 @@ export default function Donations() {
                         <Thead>
                             <Tr>
                                 <Th>Nom</Th>
-                                <Th>Date</Th>
                                 <Th>Reçu</Th>
                                 <Th isNumeric>Montant</Th>
+                                <Th>Date</Th>
                             </Tr>
                         </Thead>
                         <Tbody>
@@ -137,7 +157,6 @@ export default function Donations() {
                                             {donation.name}
                                         </a>
                                     </Td>
-                                    <Td>{donation.date}</Td>
                                     <Td>
                                         {donation.documentUrl && (
                                             <a
@@ -156,6 +175,7 @@ export default function Donations() {
                                         )}
                                     </Td>
                                     <Td isNumeric>{donation.amount}$</Td>
+                                    <Td>{donation.date}</Td>
                                 </Tr>
                             ))}
                         </Tbody>
