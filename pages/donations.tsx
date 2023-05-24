@@ -31,7 +31,7 @@ export default function Donations() {
             url: "https://www.facebook.com/equipeatlantide",
             date: "19 mai 2023",
             amount: 250,
-            documentUrl: null,
+            documentUrl: "/recucharite.pdf",
         },
         {
             name: "Santropol Roulant",
