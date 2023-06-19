@@ -20,6 +20,20 @@ import { Chart } from "react-chartjs-2";
 export default function Donations() {
     const donations = [
         {
+            name: "Le Chainon",
+            url: "https://lechainon.org/",
+            date: "19 juin 2023",
+            amount: 300,
+            documentUrl: "/lechainon.pdf",
+        },
+        {
+            name: "Réseau Enfants-Retour",
+            url: "https://www.reseauenfantsretour.ong/",
+            date: "19 juin 2023",
+            amount: 225,
+            documentUrl: "/enfantRetour.pdf",
+        },
+        {
             name: "Centre des femmes de Montréal",
             url: "https://centredesfemmesdemtl.org/",
             date: "19 mai 2023",
@@ -110,6 +124,7 @@ export default function Donations() {
                             "Mars",
                             "Avril",
                             "Mai",
+                            "Juin",
                         ],
                         datasets: [
                             {
@@ -132,6 +147,7 @@ export default function Donations() {
                                     "838.95",
                                     "838.95",
                                     "1338.95",
+                                    "1863.95",
                                 ],
                             },
                         ],
