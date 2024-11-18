@@ -166,17 +166,41 @@ export default function Donations() {
               ],
             }}
             options={{
+              responsive: true,
+              maintainAspectRatio: false,
               plugins: {
                 legend: {
                   position: "bottom",
+                  labels: {
+                    boxWidth: 10,
+                    padding: 10,
+                    font: {
+                      size: 11,
+                    },
+                  },
                 },
               },
               scales: {
                 y: {
                   beginAtZero: true,
+                  ticks: {
+                    font: {
+                      size: 10,
+                    },
+                  },
+                },
+                x: {
+                  ticks: {
+                    font: {
+                      size: 10,
+                    },
+                    maxRotation: 45,
+                    minRotation: 45,
+                  },
                 },
               },
             }}
+            style={{ height: "300px" }}
           />
         </Box>
 
