@@ -13,6 +13,8 @@ import {
   Th,
   Thead,
   Tr,
+  SimpleGrid,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import "chart.js/auto";
 import { Chart } from "react-chartjs-2";
@@ -105,77 +107,124 @@ export default function Donations() {
     return acc;
   }, []);
 
+  const bgGradient = useColorModeValue(
+    "linear(to-br, orange.100, white)",
+    "linear(to-br, orange.900, gray.900)"
+  );
+  const statBg = useColorModeValue("white", "gray.800");
+
   return (
-    <Container p={"30px"}>
-      <Box pb={30} textAlign={"center"}>
-        <Stat>
-          <StatLabel>À ce jour, nous avons distribué</StatLabel>
-          <StatNumber>24</StatNumber>
-          <StatHelpText>places associatives</StatHelpText>
-          <StatLabel>&</StatLabel>
-          <StatNumber>
-            {donations
-              .map((d) => d.amount)
-              .reduce((acc, amount) => acc + amount)}{" "}
-            $
-          </StatNumber>
-          <StatHelpText>
-            à {[...new Set(donations.flatMap((d) => d.name))].length}{" "}
-            associations
-          </StatHelpText>
-        </Stat>
-      </Box>
-      <Box pb={30}>
-        <Chart
-          type="line"
-          data={{
-            labels: labels,
-            datasets: [
-              {
-                backgroundColor: "#dd6b20",
-                fill: true,
-                borderColor: "#dd6b20",
-                label: "donations cumulées en $",
-                data: cumulativeAmounts,
+    <Box bgGradient={bgGradient} minH="100vh">
+      <Container maxW="container.lg" p={"30px"}>
+        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6} mb={10}>
+          <Box bg={statBg} p={6} rounded="lg" shadow="md">
+            <Stat>
+              <StatLabel fontSize="sm">Places distribuées</StatLabel>
+              <StatNumber fontSize="3xl" color="orange.500">
+                24
+              </StatNumber>
+              <StatHelpText>places associatives</StatHelpText>
+            </Stat>
+          </Box>
+          <Box bg={statBg} p={6} rounded="lg" shadow="md">
+            <Stat>
+              <StatLabel fontSize="sm">Montant total</StatLabel>
+              <StatNumber fontSize="3xl" color="orange.500">
+                {donations
+                  .map((d) => d.amount)
+                  .reduce((acc, amount) => acc + amount)}{" "}
+                $
+              </StatNumber>
+              <StatHelpText>en dons</StatHelpText>
+            </Stat>
+          </Box>
+          <Box bg={statBg} p={6} rounded="lg" shadow="md">
+            <Stat>
+              <StatLabel fontSize="sm">Associations aidées</StatLabel>
+              <StatNumber fontSize="3xl" color="orange.500">
+                {[...new Set(donations.flatMap((d) => d.name))].length}
+              </StatNumber>
+              <StatHelpText>bénéficiaires</StatHelpText>
+            </Stat>
+          </Box>
+        </SimpleGrid>
+
+        <Box bg={statBg} p={6} rounded="lg" shadow="md" mb={8}>
+          <Chart
+            type="line"
+            data={{
+              labels: labels,
+              datasets: [
+                {
+                  backgroundColor: "rgba(221, 107, 32, 0.1)",
+                  fill: true,
+                  borderColor: "#dd6b20",
+                  label: "Donations cumulées en $",
+                  data: cumulativeAmounts,
+                  tension: 0.3,
+                },
+              ],
+            }}
+            options={{
+              plugins: {
+                legend: {
+                  position: "bottom",
+                },
               },
-            ],
-          }}
-        />
-      </Box>
-      <Box>
-        <TableContainer>
-          <Table size="sm">
-            <Thead>
-              <Tr>
-                <Th>Nom</Th>
-                <Th>Reçu</Th>
-                <Th isNumeric>Montant</Th>
-                <Th>Date</Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              {donations.map((donation) => (
-                <Tr key={donation.name}>
-                  <Td>
-                    <a href={donation.url}>{donation.name}</a>
-                  </Td>
-                  <Td>
-                    {donation.documentUrl && (
-                      <a href={"receipt_donations/" + donation.documentUrl}>
-                        <Button colorScheme="orange" size="xs">
-                          télécharger
-                        </Button>
-                      </a>
-                    )}
-                  </Td>
-                  <Td isNumeric>{donation.amount}$</Td>
-                  <Td>{donation.date}</Td>
+              scales: {
+                y: {
+                  beginAtZero: true,
+                },
+              },
+            }}
+          />
+        </Box>
+
+        <Box bg={statBg} rounded="lg" shadow="md" overflow="hidden">
+          <TableContainer>
+            <Table size="sm" variant="simple">
+              <Thead bg="orange.50">
+                <Tr>
+                  <Th>Nom</Th>
+                  <Th>Reçu</Th>
+                  <Th isNumeric>Montant</Th>
+                  <Th>Date</Th>
                 </Tr>
-              ))}
-            </Tbody>
-          </Table>
-        </TableContainer>
-      </Box>
-    </Container>
+              </Thead>
+              <Tbody>
+                {donations.map((donation, idx) => (
+                  <Tr
+                    key={`${donation.name}-${idx}`}
+                    bg={idx % 2 === 0 ? "transparent" : "orange.50"}
+                  >
+                    <Td>
+                      <a
+                        href={donation.url}
+                        style={{ textDecoration: "underline" }}
+                      >
+                        {donation.name}
+                      </a>
+                    </Td>
+                    <Td>
+                      {donation.documentUrl && (
+                        <a href={"receipt_donations/" + donation.documentUrl}>
+                          <Button colorScheme="orange" size="xs">
+                            télécharger
+                          </Button>
+                        </a>
+                      )}
+                    </Td>
+                    <Td isNumeric fontWeight="bold">
+                      {donation.amount}$
+                    </Td>
+                    <Td>{donation.date}</Td>
+                  </Tr>
+                ))}
+              </Tbody>
+            </Table>
+          </TableContainer>
+        </Box>
+      </Container>
+    </Box>
   );
 }
