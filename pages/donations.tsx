@@ -20,6 +20,13 @@ import { Chart } from "react-chartjs-2";
 export default function Donations() {
   const donations = [
     {
+      name: "Fondation INCA pour les Non-voyants",
+      url: "https://www.inca.ca/fr?region=qc",
+      date: "18 novembre 2024",
+      amount: 300,
+      documentUrl: "/inca.pdf",
+    },
+    {
       name: "Réseau Enfants-Retour",
       url: "https://www.reseauenfantsretour.ong/",
       date: "19 juillet 2023",
@@ -89,7 +96,14 @@ export default function Donations() {
       amount: 15,
       documentUrl: null,
     },
-  ];
+  ].reverse();
+
+  const labels = donations.map((donation) => donation.date);
+  const cumulativeAmounts = donations.reduce((acc: number[], donation) => {
+    const lastAmount = acc.length > 0 ? acc[acc.length - 1] : 0;
+    acc.push(lastAmount + donation.amount);
+    return acc;
+  }, []);
 
   return (
     <Container p={"30px"}>
@@ -115,50 +129,14 @@ export default function Donations() {
         <Chart
           type="line"
           data={{
-            labels: [
-              "Avril 2022",
-              "Mai",
-              "Juin",
-              "Juillet",
-              "Aout",
-              "Septembre",
-              "Octobre",
-              "Novembre",
-              "Décembre",
-              "Janvier 2023",
-              "Février",
-              "Mars",
-              "Avril",
-              "Mai",
-              "Juin",
-              "Juillet",
-              "Août",
-            ],
+            labels: labels,
             datasets: [
               {
                 backgroundColor: "#dd6b20",
                 fill: true,
                 borderColor: "#dd6b20",
                 label: "donations cumulées en $",
-                data: [
-                  "0",
-                  "0",
-                  "315",
-                  "315",
-                  "315",
-                  "315",
-                  "315",
-                  "315",
-                  "638.95",
-                  "638.95",
-                  "838.95",
-                  "838.95",
-                  "838.95",
-                  "1338.95",
-                  "1863.95",
-                  "2088.95",
-                  "2088.95",
-                ],
+                data: cumulativeAmounts,
               },
             ],
           }}
